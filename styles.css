@@ -1,4 +1,4 @@
-body {
+* {
     line-height: 1;
 }
 
@@ -10,10 +10,8 @@ body {
 
 #container {
     width: 70vw;
-    height: 70vw;
-    border: solid black;
-    justify-items: center;
-    align-content: center;
+    height: 70vh;
+    border: 5px solid black;
 }
 
 :root {
@@ -28,14 +26,10 @@ body {
     grid-template-columns: repeat(var(--grid-cols), auto);
     width: 100%;
     height: 100%;
-    grid-gap: 1px;
 
 }
 
-.grid-item {
+.gridSquare {
+    background-color: rgba(0, 0, 0, 0.0);
     padding: 0px;
-}
-
-.gridSquare:hover {
-    background-color: black;
 }
