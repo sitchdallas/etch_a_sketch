@@ -1,6 +1,10 @@
 const container = document.querySelector("#gridContainer");
+const changeRes = document.querySelector('#changeResolutionButton');
+const reset = document.querySelector('#resetGameButton');
+let userInput;
+let gridNumber = 16;
 
-function makeRows(gridNumber) {
+function makeRows(gridNumber = 16) {
     rows = gridNumber;
     cols = gridNumber;
     container.style.setProperty('--grid-rows', rows);
@@ -14,4 +18,24 @@ function makeRows(gridNumber) {
     )};
 };
 
-makeRows(64);
+makeRows();
+
+function clearGrid(gridNumber) {
+    container.innerHTML = ''
+}
+
+function changeResolution() {
+    clearGrid(gridNumber);
+    gridInput = prompt("Please choose a number smaller than 100.", "16");
+    if (gridNumber > 24 || gridNumber < 12) {
+        alert('Try again.');
+        return;
+    }
+    makeRows(gridInput);
+}
+
+function clearGame() {
+    container.innerHTML = ''
+    makeRows(gridInput);
+};
+

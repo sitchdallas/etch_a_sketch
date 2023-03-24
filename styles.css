@@ -1,5 +1,6 @@
 * {
     line-height: 1;
+    font-family: Inconsolata, 'Arial';
 }
 
 #containerContainer {
@@ -9,9 +10,10 @@
 }
 
 #container {
-    width: 70vw;
+    width: 70vh;
     height: 70vh;
-    border: 5px solid black;
+    border: 10px solid black;
+    border-radius: 5px;
 }
 
 :root {
@@ -32,4 +34,60 @@
 .gridSquare {
     background-color: rgba(0, 0, 0, 0.0);
     padding: 0px;
+    border: 1px solid black;
+}
+
+.buttons,
+.title {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.title {
+    margin-top: 0px;
+}
+
+#resetGameButton,
+#changeResolutionButton,
+#titleWords {
+    margin: 0px 50px;
+    --b: 2px;   /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: #000000;
+      
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+    
+    border: 0;
+    
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#titleWords {
+    font-size: 34px;
+}
+    
+#resetGameButton:hover,
+#changeResolutionButton:hover,
+#resetGameButto:focus-visible,
+#changeResolutionButton:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+    }
+    
+.button-89:active {
+    background: var(--color);
+    color: #fff;
 }
